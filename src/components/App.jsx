@@ -3,6 +3,7 @@ import { FeedbackOptions } from './feedbackOptions/FeedbackOptions';
 import { Statistics } from 'components/statistics/Statistics';
 import { Section } from './section/Section';
 import { Notification } from './notification/Notification';
+import css from './App.module.css';
 
 const App = () => {
   const [good, setGood] = useState(0);
@@ -37,7 +38,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <div className={css.feedbackBox}>
       <Section title="Please leave feedback!">
         <FeedbackOptions options={feedback} onLeaveFeedback={onClickBtn} />
       </Section>
@@ -49,7 +50,7 @@ const App = () => {
           <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage} />
         )}
       </Section>
-    </>
+    </div>
   );
 };
 
