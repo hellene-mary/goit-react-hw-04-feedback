@@ -2,15 +2,13 @@ import PropTypes from 'prop-types';
 import css from './FeedbackOptions.module.css';
 
 export function FeedbackOptions({ options, onLeaveFeedback }) {
-  // console.log('options', options);
-
-  const keys = Object.keys(options);
+  const optionsList = Object.keys(options);
   return (
     <ul className={css.feedbackBtnBox}>
-      {keys.map(key => (
-        <li key={key}>
-          <button className={css.feedbackBtn} key={key} type="button" name={key} onClick={onLeaveFeedback}>
-            {key}
+      {optionsList.map(item => (
+        <li key={item}>
+          <button className={css.feedbackBtn} key={item} type="button" name={item} onClick={onLeaveFeedback}>
+            {item}
           </button>
         </li>
       ))}

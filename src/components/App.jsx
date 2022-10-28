@@ -10,7 +10,6 @@ const App = () => {
   const [neutral, setNutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const feedback = { good, neutral, bad };
   const total = good + neutral + bad;
   const positivePercentage = Math.round((good / total) * 100);
 
@@ -40,7 +39,7 @@ const App = () => {
   return (
     <div className={css.feedbackBox}>
       <Section title="Please leave feedback!">
-        <FeedbackOptions options={feedback} onLeaveFeedback={onClickBtn} />
+        <FeedbackOptions options={{ good, neutral, bad }} onLeaveFeedback={onClickBtn} />
       </Section>
 
       <Section title={'Statistics'}>
